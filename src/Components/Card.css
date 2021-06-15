@@ -1,0 +1,25 @@
+.MuiCardHeader-content {
+    flex: 1 1 auto;
+    justify-content: center;
+    display: flex;
+}
+
+.MuiCardContent-root {
+    padding: 16px;
+    display: grid;
+    justify-content: center;
+}
+
+.MuiCardActions-root {
+    display: flex;
+    padding: 8px;
+    justify-content: flex-end;
+}
+
+.Description-text{
+    white-space: nowrap; 
+    width: 50px; 
+    overflow: hidden;
+    text-overflow: ellipsis; 
+    border: 1px solid #292424;
+}
