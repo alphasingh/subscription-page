@@ -23,3 +23,10 @@
     text-overflow: ellipsis; 
     border: 1px solid #292424;
 }
+
+.ARButton{
+    background: aqua;
+    padding: 8px;
+    color: red;
+    margin-left: 10px;
+}
