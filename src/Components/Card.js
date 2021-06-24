@@ -9,6 +9,7 @@ import Typography from '@material-ui/core/Typography';
 import {red} from '@material-ui/core/colors';
 import Button from "@material-ui/core/Button"
 import "./Card.css"
+import {Link} from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -53,7 +54,7 @@ export default function RecipeReviewCard(props) {
             />
             <CardMedia
                 className={classes.media}
-                image={props.data.imageUrl}
+                image="https://picsum.photos/200"
                 title="Weekly Plan"
 
             />
@@ -64,7 +65,7 @@ export default function RecipeReviewCard(props) {
                     {props.data.description}
                 </Typography><br/>
                 <Typography variant="body2" color="textSecondary" component="p">
-                    {props.data.price}$
+                    {props.data.averagePricePerPerson}$
                 </Typography>
             </CardContent>
             <CardActions>
@@ -76,6 +77,7 @@ export default function RecipeReviewCard(props) {
                     3D
                 </Button>
                 <Button variant="contained" color="primary">
+                    Subscribe Now
                 </Button>
             </CardActions>
         </Card>
