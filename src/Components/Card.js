@@ -1,15 +1,19 @@
 import React from 'react';
 import {makeStyles} from '@material-ui/core/styles';
+import clsx from 'clsx';
 import Card from '@material-ui/core/Card';
 import CardHeader from '@material-ui/core/CardHeader';
 import CardMedia from '@material-ui/core/CardMedia';
 import CardContent from '@material-ui/core/CardContent';
 import CardActions from '@material-ui/core/CardActions';
+import Collapse from '@material-ui/core/Collapse';
+import Avatar from '@material-ui/core/Avatar';
+import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import {red} from '@material-ui/core/colors';
 import Button from "@material-ui/core/Button"
 import "./Card.css"
-import {Link} from "react-router-dom";
+import {Route, Switch, Link, BrowserRouter} from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -54,7 +58,8 @@ export default function RecipeReviewCard(props) {
             />
             <CardMedia
                 className={classes.media}
-                image="https://picsum.photos/200"
+                // image={props.data.imageURL}
+                image={props.data.imageUrl}
                 title="Weekly Plan"
 
             />
@@ -65,7 +70,7 @@ export default function RecipeReviewCard(props) {
                     {props.data.description}
                 </Typography><br/>
                 <Typography variant="body2" color="textSecondary" component="p">
-                    {props.data.averagePricePerPerson}$
+                    {props.data.price}$
                 </Typography>
             </CardContent>
             <CardActions>
@@ -77,7 +82,7 @@ export default function RecipeReviewCard(props) {
                     3D
                 </Button>
                 <Button variant="contained" color="primary">
-                    Subscribe Now
+                    <Link to="/buyerinfo" className="btn btn-primary">Subscribe Now</Link>
                 </Button>
             </CardActions>
         </Card>

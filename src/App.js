@@ -1,32 +1,32 @@
-import './App.css';
+
 import React from 'react';
-import Plans from "./Components/Plans" 
+import Header from './Components/Header';
+import Content from './Components/Content';
+import Footer from './Components/Footer';
+import Gallery from './Components/Gallery';
+import {Route, Switch,Link, BrowserRouter} from "react-router-dom";
+import Buyer from './Components/BuyerInfo';
+import Plans from './Components/Plans';
+
+
 function App() {
   return (
 
-    <React.Fragment>
-      {/* <Userdetails />
-      <Check /> */}
-      <Plans></Plans>
+     <React.Fragment>
+       <BrowserRouter>
+        <div> 
+          <Header/>
+            
+              <Switch>
+                   <Route exact path="/" component={Content}/>
+                   <Route path="/buyerinfo" component={Buyer}/>
+                   <Route path="/plans" component={Plans}/>
+
+              </Switch>
+          <Footer/>
+        </div>
+       </BrowserRouter>
     </React.Fragment>
-   /* <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-        
-      </header>
-    </div>
-    **/
   );
 }
 
