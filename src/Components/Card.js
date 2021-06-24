@@ -14,6 +14,10 @@ const useStyles = makeStyles((theme) => ({
     root: {
         maxWidth: 345,
     },
+    secondaryCardButton: {
+        margin: '0 auto',
+        // display: "flex",
+    },
     media: {
         height: 0,
         paddingTop: '56.25%', // 16:9
@@ -49,8 +53,7 @@ export default function RecipeReviewCard(props) {
             />
             <CardMedia
                 className={classes.media}
-                // image={props.data.imageURL}
-                image={props.data.imageURL.default}
+                image={props.data.imageUrl}
                 title="Weekly Plan"
 
             />
@@ -61,17 +64,18 @@ export default function RecipeReviewCard(props) {
                     {props.data.description}
                 </Typography><br/>
                 <Typography variant="body2" color="textSecondary" component="p">
-                    {props.data.averagePricePerPerson}$
+                    {props.data.price}$
                 </Typography>
             </CardContent>
-            <CardActions disableSpacing>
+            <CardActions>
                 <Button
+                    className={classes.secondaryCardButton}
                     color="primary"
+                    variant="outlined"
                     onClick={() => openLinkInNewTab(props.data.modelUrl)}>
-                    AR
+                    3D
                 </Button>
                 <Button variant="contained" color="primary">
-                    Subscribe Now
                 </Button>
             </CardActions>
         </Card>
