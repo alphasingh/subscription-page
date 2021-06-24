@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/subscription-page/static/css/main.0de8cc9b.chunk.css",
-    "main.js": "/subscription-page/static/js/main.fcecfe20.chunk.js",
-    "main.js.map": "/subscription-page/static/js/main.fcecfe20.chunk.js.map",
-    "runtime-main.js": "/subscription-page/static/js/runtime-main.ad995cce.js",
-    "runtime-main.js.map": "/subscription-page/static/js/runtime-main.ad995cce.js.map",
-    "static/js/2.d1368300.chunk.js": "/subscription-page/static/js/2.d1368300.chunk.js",
-    "static/js/2.d1368300.chunk.js.map": "/subscription-page/static/js/2.d1368300.chunk.js.map",
-    "static/js/3.c4f37b3f.chunk.js": "/subscription-page/static/js/3.c4f37b3f.chunk.js",
-    "static/js/3.c4f37b3f.chunk.js.map": "/subscription-page/static/js/3.c4f37b3f.chunk.js.map",
+    "main.css": "/subscription-page/static/css/main.f6f6a366.chunk.css",
+    "main.js": "/subscription-page/static/js/main.80911a88.chunk.js",
+    "main.js.map": "/subscription-page/static/js/main.80911a88.chunk.js.map",
+    "runtime-main.js": "/subscription-page/static/js/runtime-main.f6d3dcf2.js",
+    "runtime-main.js.map": "/subscription-page/static/js/runtime-main.f6d3dcf2.js.map",
+    "static/css/2.4c97ca4f.chunk.css": "/subscription-page/static/css/2.4c97ca4f.chunk.css",
+    "static/js/2.6090ff4f.chunk.js": "/subscription-page/static/js/2.6090ff4f.chunk.js",
+    "static/js/2.6090ff4f.chunk.js.map": "/subscription-page/static/js/2.6090ff4f.chunk.js.map",
     "index.html": "/subscription-page/index.html",
-    "static/css/main.0de8cc9b.chunk.css.map": "/subscription-page/static/css/main.0de8cc9b.chunk.css.map",
-    "static/js/2.d1368300.chunk.js.LICENSE.txt": "/subscription-page/static/js/2.d1368300.chunk.js.LICENSE.txt",
-    "static/media/logo.svg": "/subscription-page/static/media/logo.6ce24c58.svg"
+    "static/css/2.4c97ca4f.chunk.css.map": "/subscription-page/static/css/2.4c97ca4f.chunk.css.map",
+    "static/css/main.f6f6a366.chunk.css.map": "/subscription-page/static/css/main.f6f6a366.chunk.css.map",
+    "static/js/2.6090ff4f.chunk.js.LICENSE.txt": "/subscription-page/static/js/2.6090ff4f.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.ad995cce.js",
-    "static/js/2.d1368300.chunk.js",
-    "static/css/main.0de8cc9b.chunk.css",
-    "static/js/main.fcecfe20.chunk.js"
+    "static/js/runtime-main.f6d3dcf2.js",
+    "static/css/2.4c97ca4f.chunk.css",
+    "static/js/2.6090ff4f.chunk.js",
+    "static/css/main.f6f6a366.chunk.css",
+    "static/js/main.80911a88.chunk.js"
   ]
 }
