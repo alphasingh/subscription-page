@@ -1,7 +1,7 @@
-import React,{useState,useEffect} from 'react';
+import React, {useState, useEffect} from 'react';
 import axios from 'axios';
 import PropTypes from 'prop-types';
-import { makeStyles, useTheme } from '@material-ui/core/styles';
+import {makeStyles, useTheme} from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
@@ -21,7 +21,7 @@ import Grid from "@material-ui/core/Grid"
 //         "description":"5 conatiners including veg curries + 14 chappatis + 1 large pulao rice or steam rice + dessert + pickle + chutney ",
 //         "averagePricePerPerson":200,  
 //         "imageURL":require("./../logo.svg")     ,
-        
+
 //     },
 //     {
 //         "planTypes" : ['WEEKLY'],
@@ -47,7 +47,7 @@ import Grid from "@material-ui/core/Grid"
 //         "averagePricePerPerson":600,     
 //         "imageURL":require("./../logo.svg")      
 //     },
-   
+
 // ]
 
 // const mainOnceList=[
@@ -68,118 +68,120 @@ import Grid from "@material-ui/core/Grid"
 // ]
 
 function TabPanel(props) {
-  const { children, value, index, ...other } = props;
+    const {children, value, index, ...other} = props;
 
-  return (
-    <div
-      role="tabpanel"
-      hidden={value !== index}
-      id={`full-width-tabpanel-${index}`}
-      aria-labelledby={`full-width-tab-${index}`}
-      {...other}
-    >
-      {value === index && (
-        <Box p={3}>
-          <Typography>{children}</Typography>
-        </Box>
-      )}
-    </div>
-  );
+    return (
+        <div
+            role="tabpanel"
+            hidden={value !== index}
+            id={`full-width-tabpanel-${index}`}
+            aria-labelledby={`full-width-tab-${index}`}
+            {...other}
+        >
+            {value === index && (
+                <Box p={3}>
+                    <Typography>{children}</Typography>
+                </Box>
+            )}
+        </div>
+    );
 }
 
 TabPanel.propTypes = {
-  children: PropTypes.node,
-  index: PropTypes.any.isRequired,
-  value: PropTypes.any.isRequired,
+    children: PropTypes.node,
+    index: PropTypes.any.isRequired,
+    value: PropTypes.any.isRequired,
 };
 
 function a11yProps(index) {
-  return {
-    id: `full-width-tab-${index}`,
-    'aria-controls': `full-width-tabpanel-${index}`,
-  };
+    return {
+        id: `full-width-tab-${index}`,
+        'aria-controls': `full-width-tabpanel-${index}`,
+    };
 }
 
 const useStyles = makeStyles((theme) => ({
-  root: {
-    backgroundColor: theme.palette.background.paper,
-    width: "100%",
-  },
+    root: {
+        backgroundColor: theme.palette.background.paper,
+        width: "100%",
+    },
 }));
 
-export default function FullWidthTabs() {
-  const classes = useStyles();
-  const theme = useTheme();
-  const [value, setValue] = React.useState(0);
+export default function FullWidthTabs(props) {
+    //console.log(props.location.data)
+    const idofseller = props.location.data
+    //console.log(idofseller.seller_id)
+    const idtest = idofseller.seller_id
+    const classes = useStyles();
+    const theme = useTheme();
+    const [value, setValue] = React.useState(0);
 
-  const handleChange = (event, newValue) => {
-    setValue(newValue);
-  };
+    const handleChange = (event, newValue) => {
+        setValue(newValue);
+    };
 
-  const handleChangeIndex = (index) => {
-    setValue(index);
-  };
+    const handleChangeIndex = (index) => {
+        setValue(index);
+    };
 
-const [plan, setPlan]= useState([]);
-  
-  useEffect(()=>{
-     let fetchData = async()=> {
-        
-        const request = await axios.get('https://tiffin-umbrella.herokuapp.com/get_plans?id=60c9002a9b10225a73918e73')
-        .then(res => {
-          console.log("response==>",res)
-          setPlan(res.data)
-          // const persons = res.data;
-          // this.setState({ persons });
-        })
-        //console.log(request.data.sellers);
-        // setSeller(request.data.sellers);
-        // return request;
-      }
-     
-      fetchData();
-             
-  },[]);
+    const [plan, setPlan] = useState([]);
 
-  
-  
-  return (
-    <div className={classes.root}>
-      <AppBar position="static" color="default">
-        <Tabs
-          value={value}
-          onChange={handleChange}
-          indicatorColor="primary"
-          textColor="primary"
-          variant="fullWidth"
-          aria-label="full width tabs example"
-        >
-          <Tab label="Weekly" {...a11yProps(0)} />
-          <Tab label="Monthly" {...a11yProps(1)} />
-          <Tab label="Daily" {...a11yProps(2)} />
-        </Tabs>
-      </AppBar>
-   
-        <TabPanel value={value} index={0} dir={theme.direction}>
-        <Grid container spacing={2}>
-          {plan.map((item,index)=>{
-          
-         return(
-           <>
-              {item.type == "WEEKLY" && 
-              <Grid item xs={12} md={4} lg={4} sm={4}>
-          {console.log("iotem===>",item)}
-          <Card
-              data={item}/>
-      </Grid>}
-           </>  
-            )
-          }
-       
-          )}
-          </Grid>
-          
-            {/* <Grid container spacing={2}>
+    useEffect(() => {
+        let fetchData = async () => {
+
+            const request = await axios.get('https://tiffin-umbrella.herokuapp.com/get_plans?id=' + idtest)
+                .then(res => {
+                    console.log("response==>", res)
+                    setPlan(res.data)
+                    // const persons = res.data;
+                    // this.setState({ persons });
+                })
+            //console.log(request.data.sellers);
+            // setSeller(request.data.sellers);
+            // return request;
+        }
+
+        fetchData();
+
+    }, []);
+
+
+    return (
+        <div className={classes.root}>
+            <AppBar position="static" color="default">
+                <Tabs
+                    value={value}
+                    onChange={handleChange}
+                    indicatorColor="primary"
+                    textColor="primary"
+                    variant="fullWidth"
+                    aria-label="full width tabs example"
+                >
+                    <Tab label="Weekly" {...a11yProps(0)} />
+                    <Tab label="Monthly" {...a11yProps(1)} />
+                    <Tab label="Daily" {...a11yProps(2)} />
+                </Tabs>
+            </AppBar>
+
+            <TabPanel value={value} index={0} dir={theme.direction}>
+                <Grid container spacing={2}>
+                    {plan.map((item, index) => {
+
+                            return (
+                                <>
+                                    {item.type == "WEEKLY" &&
+                                    <Grid item xs={12} md={4} lg={4} sm={4}>
+                                        {console.log("iotem===>", item)}
+                                        <Card
+                                            data={item}/>
+                                    </Grid>}
+                                </>
+                            )
+                        }
+                    )}
+                </Grid>
+
+                {/* <Grid container spacing={2}>
                 {mainWeeklyList && mainWeeklyList.map((item,index)=>{
                     return(
                         <Grid item xs={12} md={4} lg={4} sm={4}>
@@ -189,28 +191,27 @@ const [plan, setPlan]= useState([]);
                         </Grid>
                     )
                 })} */}
-    
-        </TabPanel>
 
-        <TabPanel value={value} index={1} dir={theme.direction}>
-        <Grid container spacing={2}>
-          {plan.map((item,index)=>{
-          
-         return(
-           <>
-              {item.type == "MONTHLY" && 
-              <Grid item xs={12} md={4} lg={4} sm={4}>
-          {console.log("iotem===>",item)}
-          <Card
-              data={item}/>
-      </Grid>}
-           </>  
-            )
-          }
-       
-          )}
-          </Grid>
-        {/* <Grid container spacing={2}> */}
+            </TabPanel>
+
+            <TabPanel value={value} index={1} dir={theme.direction}>
+                <Grid container spacing={2}>
+                    {plan.map((item, index) => {
+
+                            return (
+                                <>
+                                    {item.type == "MONTHLY" &&
+                                    <Grid item xs={12} md={4} lg={4} sm={4}>
+                                        {console.log("iotem===>", item)}
+                                        <Card
+                                            data={item}/>
+                                    </Grid>}
+                                </>
+                            )
+                        }
+                    )}
+                </Grid>
+                {/* <Grid container spacing={2}> */}
                 {/* {mainMonthlyList && mainMonthlyList.map((item,index)=>{
                     return(
                         <Grid item xs={12} md={4} lg={4} sm={4}>
@@ -221,29 +222,35 @@ const [plan, setPlan]= useState([]);
                     )
                 })}
             </Grid> */}
-        </TabPanel>
+            </TabPanel>
 
-        <TabPanel value={value} index={2} dir={theme.direction}>
-        <Grid container spacing={2}>
-          {plan.map((item,index)=>{
-          
-         return(
-           <>
-              {item.type == "ONCE" && 
-              <Grid item xs={12} md={4} lg={4} sm={4}>
-          {console.log("iotem===>",item)}
-          <Card
-              data={item}/>
-      </Grid>}
-           </>  
-            )
-          }
-       
-          )}
-          </Grid>
-        </TabPanel>
-        <hr /> <hr /> <hr /> <hr /> <hr /> <hr /> <hr /> <hr />
-    </div>
-    
-  );
+            <TabPanel value={value} index={2} dir={theme.direction}>
+                <Grid container spacing={2}>
+                    {plan.map((item, index) => {
+
+                            return (
+                                <>
+                                    {item.type == "ONCE" &&
+                                    <Grid item xs={12} md={4} lg={4} sm={4}>
+                                        {console.log("iotem===>", item)}
+                                        <Card
+                                            data={item}/>
+                                    </Grid>}
+                                </>
+                            )
+                        }
+                    )}
+                </Grid>
+            </TabPanel>
+            <hr/>
+            <hr/>
+            <hr/>
+            <hr/>
+            <hr/>
+            <hr/>
+            <hr/>
+            <hr/>
+        </div>
+
+    );
 }

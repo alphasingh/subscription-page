@@ -5,53 +5,104 @@
   margin-left: 200px;
   align-items: center;
 } */
-.main{
-  font-weight: 300px;
-  font-family: cursive;
-  text-transform: capitalize;
-  font-size: 60px;
-  color:#fff;
+.main {
+    font-weight: 300px;
+    font-family: cursive;
+    text-transform: capitalize;
+    font-size: 60px;
+    color: #fff;
 
 }
-.caption{
-  font-weight: 300px;
-  font-family: 'Segoe UI';
-  color: #fff;
-  font-size: 30px;
-  float: left;
-  width: 50%;
-  margin-left: 0px;
-  margin-right: 0px;
-  text-align: center;
-  position: relative;
+
+.caption {
+    font-weight: 300px;
+    font-family: 'Segoe UI';
+    color: #fff;
+    font-size: 30px;
+    float: left;
+    width: 50%;
+    margin-left: 0px;
+    margin-right: 0px;
+    text-align: center;
+    position: relative;
 }
+
 .centered {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
- 
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
 }
-.box{
-  border:3px; 
-  border-style:solid; 
-  border-color:darkgray; 
-  padding: 1em;
-  /*width: 300px;*/
-  color: #fff;
-  text-transform: uppercase;
-  float: left;
-  width: 33.33%;
-  margin-left: 0px;
-  position: relative;
-  text-align: center;
+
+.box {
+    border: 3px;
+    border-style: solid;
+    border-color: darkgray;
+    padding: 1em;
+    /*width: 300px;*/
+    color: #fff;
+    text-transform: uppercase;
+    float: left;
+    width: 33.33%;
+    margin-left: 0px;
+    position: relative;
+    text-align: center;
 }
-.box:hover{
-  cursor: pointer;
-  background-color:cadetblue;
+
+.box:hover {
+    cursor: pointer;
+    background-color: cadetblue;
+}
+
+h1 {
+    color: green;
+}
+
+.multipleSelection {
+    width: 300px;
+    background-color: #BCC2C1;
+}
+
+.selectBox {
+    position: relative;
+}
+
+.selectBox select {
+    width: 100%;
+    font-weight: bold;
+}
+
+.overSelect {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+
+#checkBoxes {
+    display: none;
+    border: 1px #8DF5E4 solid;
+}
+
+#checkBoxes label {
+    display: block;
+}
+
+#checkBoxes label:hover {
+    background-color: #4F615E;
+}
+
+select, button {
+    border: 1px solid gray;
+    margin: 0;
+    padding: 0 .6em;
+    height: 2.3em;
+    box-sizing: border-box;
 }
 
 
-.icons-style{
-  /* transform: scale(5.8); */
+.icons-style {
+    /* transform: scale(5.8); */
 }
